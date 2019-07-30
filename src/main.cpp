@@ -44,8 +44,8 @@ int main(int argc, str* argv) {
     std::ofstream makeFile(make); 
     delete [] make; 
 
-    makeFile << "CXX			 := g++\n"
-			 <<	"DEBUG_FLAGS     := -g -pedantic-errors -Wall -Wextra -Werror\n"
+    makeFile << "CXX		 := g++\n"
+             <<	"DEBUG_FLAGS     := -g -pedantic-errors -Wall -Wextra -Werror\n"
              << "RELEASE_FLAGS   := -s -O3 -w\n\n" 
              << "BIN             := bin\n"
              << "INCLUDE         := -Iinclude\n"
@@ -61,7 +61,7 @@ int main(int argc, str* argv) {
              << "release: $(SRC)/*.cpp\n"
              << "\t$(CXX) $(RELEASE_FLAGS) $(INCLUDE) $(LIB) $(LIBS) $^ -o $(BIN)/$(NAME)\n\n"
              << "clean:\n"
-             <<"\trm $(BIN)/$(NAME)";
+             << "\trm $(BIN)/$(NAME)";
     
     
     str mainCpp   = strCat(argv[1], "/src/main.cpp"),
